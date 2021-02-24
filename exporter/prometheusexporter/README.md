@@ -8,7 +8,7 @@ Supported pipeline types: metrics
 
 The following settings are required:
 
-- `endpoint` (no default): Where to send metric data
+- `endpoint` (no default): Provides "/metrics" at this address to be read by Prometheus
 
 The following settings can be optionally configured:
 
