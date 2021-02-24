@@ -209,7 +209,7 @@ docker-otelcol:
 	COMPONENT=otelcol $(MAKE) docker-component
 
 .PHONY: binaries-all-sys
-binaries-all-sys: binaries-darwin_amd64 binaries-linux_amd64 binaries-linux_arm64 binaries-windows_amd64
+binaries-all-sys: binaries-darwin_amd64 binaries-linux_amd64 binaries-linux_arm64 binaries-windows_amd64 binaries-darwin_arm64
 
 .PHONY: binaries-darwin_amd64
 binaries-darwin_amd64:
@@ -226,6 +226,10 @@ binaries-linux_arm64:
 .PHONY: binaries-windows_amd64
 binaries-windows_amd64:
 	GOOS=windows GOARCH=amd64 EXTENSION=.exe $(MAKE) build-binary-internal
+
+.PHONY: binaries-darwin_arm64
+binaries-darwin_arm64:
+	GOOS=darwin  GOARCH=arm64 $(MAKE) build-binary-internal
 
 .PHONY: build-binary-internal
 build-binary-internal:
